@@ -131,13 +131,13 @@ const Crud: React.FC = () => {
   };
 
   return (
-    <div className="container mx-auto p-4 flex flex-col items-center">
-      <h1 className="text-2xl font-bold mb-4">Todo List</h1>
+    <div className="container mx-auto p-4 flex flex-col items-center w-[80%]">
+      <h1 className="font-bold mb-8 text-5xl text-white bg-black pt-2 pb-4 px-5 rounded">Just Do It ✓</h1>
       <div className="mb-4 flex">
         <input
           type="text"
           className="border-gray-300 border rounded py-2 px-4 mr-2"
-          placeholder="Enter new todo"
+          placeholder="Enter new To-Do"
           value={newTodoTitle}
           onChange={(e) => setNewTodoTitle(e.target.value)}
         />
@@ -145,12 +145,12 @@ const Crud: React.FC = () => {
           className="bg-blue-500 text-white py-2 px-4 rounded"
           onClick={addTodo}
         >
-          Add Todo
+          Add To-Do
         </button>
       </div>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="bg-white p-2 rounded grid md:grid-cols-3 sm:grid-cols-2 gap-1">
         {todos.map((todo) => (
-          <div key={todo.id} className="mb-2 border rounded p-2 flex flex-col gap-1 text-center items-center">
+          <div key={todo.id} className="mb-2 border rounded p-2 flex flex-col gap-1 text-justify items-center text-wrap border-8 border-pink-800">
             {editingTodo?.id === todo.id ? (
               <>
                 <input
